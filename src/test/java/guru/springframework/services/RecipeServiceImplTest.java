@@ -4,6 +4,7 @@ import guru.springframework.domain.Recipe;
 import guru.springframework.repositories.RecipeRepository;
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
@@ -20,6 +21,7 @@ import static org.mockito.Mockito.*;
  */
 public class RecipeServiceImplTest {
 
+    @InjectMocks
     RecipeServiceImpl recipeService;
 
     @Mock
@@ -29,7 +31,6 @@ public class RecipeServiceImplTest {
     public void setUp() throws Exception{
         //give me mock recipe repo
         MockitoAnnotations.initMocks(this);
-        recipeService = new RecipeServiceImpl(recipeRepository);
     }
     @Test
     public void getRecipeByIdTest() throws Exception {
