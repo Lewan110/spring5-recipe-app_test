@@ -9,5 +9,7 @@ import java.util.Set;
  */
 public interface RecipeService {
 
+    Recipe findById(Long l);
+
     Set<Recipe> getRecipes();
 }
